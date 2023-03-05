@@ -1,0 +1,13 @@
+h1
+  | プロフィール
+
+p
+  = "#{User.human_attribute_name('name')}： "
+  = @user.name
+p
+  = "#{User.human_attribute_name('email')}： "
+  = @user.email
+p
+  = link_to '戻る', users_path
+  - if current_user == @user
+    | | #{ link_to '編集', edit_user_registration_path }
