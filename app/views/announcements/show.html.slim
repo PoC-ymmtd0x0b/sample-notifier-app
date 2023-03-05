@@ -1,0 +1,19 @@
+p
+  strong #{ Announcement.human_attribute_name('title') }:
+  = @announcement.title
+
+p
+  strong #{ Announcement.human_attribute_name('description') }:
+  = @announcement.description
+
+p
+  strong #{ Announcement.human_attribute_name('user') }:
+  = @announcement.user.name
+
+- if @announcement.user == current_user
+  => link_to '編集', edit_announcement_path(@announcement)
+  '|
+  =< link_to '戻る', announcements_path
+- else
+  = link_to '戻る', announcements_path
+
