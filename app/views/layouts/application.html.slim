@@ -11,4 +11,10 @@ html
   body
     - flash.each do |message_type, message|
       = content_tag :div, message, class: message_type
+    - if user_signed_in?
+      p
+        = link_to 'トップ', root_path
+      p
+        | #{ link_to current_user.name, current_user }としてログイン中...
+        |  / #{ link_to 'ログアウト', destroy_user_session_path, method: :delete }
     = yield
