@@ -1,0 +1,15 @@
+p
+  strong #{ Report.human_attribute_name('title') }:
+  = @report.title
+
+p
+  strong #{ Report.human_attribute_name('description') }:
+  = @report.description
+
+p
+  strong #{ Report.human_attribute_name('user') }:
+  = @report.user.name
+
+=> link_to '編集', edit_report_path(@report)
+'|
+=< link_to '戻る', reports_path
