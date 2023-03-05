@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # not default
+gem 'devise'
+gem 'devise-i18n'
 gem 'tilt', '2.0.11'
 gem 'slim', '4.1.0'
 gem 'slim-rails', '3.6.1'
