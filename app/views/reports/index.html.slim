@@ -1,0 +1,25 @@
+h1 日報一覧
+
+table
+  thead
+    tr
+      th = Report.human_attribute_name('title')
+      th = Report.human_attribute_name('description')
+      th = Report.human_attribute_name('user')
+      th
+      th
+      th
+
+  tbody
+    - @reports.each do |report|
+      tr
+        td = report.title
+        td = report.description
+        td = report.user.name
+        td = link_to '詳細', report
+        td = link_to '編集', edit_report_path(report)
+        td = link_to '削除', report, data: {confirm: '本当に実行してよろしいでしょうか？'}, method: :delete
+
+br
+
+= link_to "新しい日報を作る", new_report_path
