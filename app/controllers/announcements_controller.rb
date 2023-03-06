@@ -1,5 +1,6 @@
 class AnnouncementsController < ApplicationController
-  before_action :set_announcement, only: %i[ show edit update destroy ]
+  before_action :set_announcement, only: %i[show]
+  before_action :set_my_announcement, only: %i[edit update destroy]
 
   # GET /announcements or /announcements.json
   def index
@@ -44,13 +45,17 @@ class AnnouncementsController < ApplicationController
   def destroy
     @announcement.destroy
 
-    redirect_to announcements_url, notice: 'お知らせが削除しました'
+    redirect_to announcements_url, notice: 'お知らせが削除されました'
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_announcement
       @announcement = Announcement.find(params[:id])
+    end
+
+    def set_my_announcement
+      @announcement = current_user.announcements.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
