@@ -4,6 +4,7 @@ ja:
       user: ユーザー  #g
       report: 日報  #g
       announcement: お知らせ  #g
+      page: ページ  #g
 
     attributes:
       user:
@@ -21,5 +22,10 @@ ja:
 
       announcement:
         description: 説明  #g
+        title: タイトル  #g
+        user: 作成者  #g
+
+      page:
+        body: 本文  #g
         title: タイトル  #g
         user: 作成者  #g
