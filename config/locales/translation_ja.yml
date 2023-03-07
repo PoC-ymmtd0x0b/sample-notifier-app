@@ -5,6 +5,7 @@ ja:
       report: 日報  #g
       announcement: お知らせ  #g
       page: ページ  #g
+      notification: 通知  #g
 
     attributes:
       user:
@@ -29,3 +30,8 @@ ja:
         body: 本文  #g
         title: タイトル  #g
         user: 作成者  #g
+
+      notification:
+        link: リンク  #g
+        message: メッセージ  #g
+        sender: 発信者  #g
