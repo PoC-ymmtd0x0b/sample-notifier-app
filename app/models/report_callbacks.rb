@@ -7,7 +7,10 @@ class ReportCallbacks
 
   def notify_first_report(report)
     User.all.each do |receiver|
-      NotificationFacade.first_report(report, receiver) if report.owner != receiver
+      ActivityDelivery.with(
+        report: report,
+        receiver: receiver
+      ).notify(:first_report) if report.owner != receiver
     end
   end
 end
