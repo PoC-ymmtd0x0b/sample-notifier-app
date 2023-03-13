@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # not default
+gem 'active_delivery'
 gem 'abstract_notifier'
 gem 'devise'
 gem 'devise-i18n'

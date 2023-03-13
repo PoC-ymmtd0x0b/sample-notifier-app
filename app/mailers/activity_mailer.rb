@@ -1,4 +1,4 @@
-class NotificationMailer < ApplicationMailer
+class ActivityMailer < ApplicationMailer
   before_action do
     @receiver = params[:receiver]
     @report = params[:report]
