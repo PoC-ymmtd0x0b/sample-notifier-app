@@ -4,7 +4,7 @@ class NotificationFacade
       ActivityNotifier.with(
         report: report,
         receiver: receiver
-      ).first_report.notify_now
+      ).first_report.notify_later
 
       NotificationMailer.with(
         report: report,

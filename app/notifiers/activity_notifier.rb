@@ -1,10 +1,11 @@
 class ActivityNotifier < AbstractNotifier::Base
   self.driver = ActivityDriver.new
+  self.async_adapter = ActivityAsyncAdapter.new
 
-  def first_report(opts = {})
-    opts.merge!(params)
-    report = opts[:report]
-    receiver = opts[:receiver]
+  def first_report(params = {})
+    params.merge!(@params)
+    report = params[:report]
+    receiver = params[:receiver]
 
     notification(
       body: "#{report.user.name}さんがはじめての日報を書きました！",
