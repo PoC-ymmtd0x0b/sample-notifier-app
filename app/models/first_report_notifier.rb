@@ -1,11 +1,5 @@
-class ReportCallbacks
-  def after_save(report)
-    notify_first_report(report) if report.first?
-  end
-
-  private
-
-  def notify_first_report(report)
+class FirstReportNotifier
+  def call(report)
     User.all.each do |receiver|
       ActivityDelivery.with(
         report: report,

@@ -26,6 +26,7 @@ class ReportsController < ApplicationController
     @report.user_id = current_user.id
 
     if @report.save
+      Newspaper.publish(:notify_first_report, @report) if @report.first?
       redirect_to report_url(@report), notice: '日報を作成しました'
     else
       render :new, status: :unprocessable_entity

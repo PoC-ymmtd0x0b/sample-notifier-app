@@ -3,8 +3,6 @@ class Report < ApplicationRecord
   alias owner user
   validates :title, presence: true
 
-  after_save ReportCallbacks.new
-
   def first?
     Report.select(:id)
           .where(user: user)
