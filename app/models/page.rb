@@ -3,4 +3,6 @@ class Page < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
+
+  has_one_attached :ogp_image
 end

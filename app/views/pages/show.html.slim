@@ -5,12 +5,17 @@ p.content
 
 p
   strong #{ Page.human_attribute_name('body') }
-  = simple_format @page.body, class: 'content'
+  = simple_format h(@page.body), class: 'content'
 
 p
   strong #{ Page.human_attribute_name('user') }
 p.content
   = @page.user.name
+
+p
+  strong #{ Page.human_attribute_name('ogp_image') }
+p.content
+  = image_tag @page.ogp_image, class: 'ogp_image'
 
 - if @page.user == current_user
   => link_to '編集', edit_page_path(@page)
