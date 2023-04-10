@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
   before_action :set_page, only: %i[show]
   before_action :set_my_page, only: %i[edit update destroy]
 
