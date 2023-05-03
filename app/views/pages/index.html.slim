@@ -1,0 +1,19 @@
+h1 ドキュメント一覧
+
+table
+  thead
+    tr
+      th = Page.human_attribute_name('title')
+      th = Page.human_attribute_name('user')
+      th
+
+  tbody
+    - @pages.each do |page|
+      tr
+        td = page.title
+        td = page.user.name
+        td = link_to "詳細", page
+
+br
+
+= link_to '新しいドキュメントを作成', new_page_path

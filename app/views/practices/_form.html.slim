@@ -1,0 +1,15 @@
+= form_for @practice do |f|
+  - if @practice.errors.any?
+    #error_explanation
+      h2 = t 'errors.template.header', model: Practice.model_name.human, count: @practice.errors.count
+      ul
+        - @practice.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_area :description
+  .actions = f.submit
