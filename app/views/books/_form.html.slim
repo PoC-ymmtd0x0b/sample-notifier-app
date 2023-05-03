@@ -9,7 +9,13 @@
   .field
     = f.label :title
     = f.text_field :title
+
   .field
     = f.label :price
     = f.number_field :price
+
+  .field
+    = f.label :cover
+    = f.file_field :cover
+
   .actions = f.submit

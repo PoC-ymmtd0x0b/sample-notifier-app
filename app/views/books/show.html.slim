@@ -8,6 +8,12 @@ p
 p.content
   = @book.price
 
+- if @book.cover.representable?
+  p
+    strong #{ Book.human_attribute_name('cover') }
+  p.content
+    = image_tag @book.cover, class: 'cover'
+
 => link_to "編集", edit_book_path(@book)
 '|
 =>< link_to '削除', @book, data: {confirm: '本当に実行してよろしいでしょうか？'}, method: :delete

@@ -45,3 +45,4 @@ ja:
       book:
         title: タイトル  #g
         price: 価格  #g
+        cover: 表紙  #g
