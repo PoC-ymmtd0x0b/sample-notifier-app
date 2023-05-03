@@ -1,0 +1,19 @@
+h1 日報一覧
+
+table
+  thead
+    tr
+      th = Report.human_attribute_name('title')
+      th = Report.human_attribute_name('user')
+      th
+
+  tbody
+    - @reports.each do |report|
+      tr
+        td = report.title
+        td = report.user.name
+        td = link_to '詳細', report
+
+br
+
+= link_to "新しい日報を作る", new_report_path
