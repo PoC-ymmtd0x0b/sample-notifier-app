@@ -6,6 +6,8 @@ ja:
       announcement: お知らせ  #g
       page: ページ  #g
       notification: 通知  #g
+      practice: プラクティス  #g
+      book: 参考書  #g
 
     attributes:
       user:
@@ -39,3 +41,7 @@ ja:
       practice:
         description: 説明  #g
         title: タイトル  #g
+
+      book:
+        title: タイトル  #g
+        price: 価格  #g
