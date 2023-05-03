@@ -35,3 +35,7 @@ ja:
         link: リンク  #g
         message: メッセージ  #g
         sender: 発信者  #g
+
+      practice:
+        description: 説明  #g
+        title: タイトル  #g
