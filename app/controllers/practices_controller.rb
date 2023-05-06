@@ -10,9 +10,11 @@ class PracticesController < ApplicationController
 
   def new
     @practice = Practice.new
+    @practice.practices_books.new
   end
 
   def edit
+    @practice.practices_books.new
   end
 
   def create
@@ -45,6 +47,10 @@ class PracticesController < ApplicationController
     end
 
     def practice_params
-      params.require(:practice).permit(:title, :description)
+      params.require(:practice).permit(
+        :title,
+        :description,
+        practices_books_attributes: %i[id book_id]
+      )
     end
 end

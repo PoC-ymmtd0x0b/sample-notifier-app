@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_03_134228) do
+ActiveRecord::Schema.define(version: 2023_05_06_100950) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -83,6 +83,15 @@ ActiveRecord::Schema.define(version: 2023_05_03_134228) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "practices_books", force: :cascade do |t|
+    t.integer "practice_id", null: false
+    t.integer "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_practices_books_on_book_id"
+    t.index ["practice_id"], name: "index_practices_books_on_practice_id"
+  end
+
   create_table "reports", force: :cascade do |t|
     t.string "title", null: false
     t.text "description"
@@ -111,5 +120,7 @@ ActiveRecord::Schema.define(version: 2023_05_03_134228) do
   add_foreign_key "notifications", "users"
   add_foreign_key "notifications", "users", column: "sender_id"
   add_foreign_key "pages", "users"
+  add_foreign_key "practices_books", "books"
+  add_foreign_key "practices_books", "practices"
   add_foreign_key "reports", "users"
 end
