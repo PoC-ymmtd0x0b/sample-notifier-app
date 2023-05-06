@@ -50,7 +50,7 @@ class PracticesController < ApplicationController
       params.require(:practice).permit(
         :title,
         :description,
-        practices_books_attributes: %i[id book_id]
+        practices_books_attributes: %i[id book_id _destroy]
       )
     end
 end

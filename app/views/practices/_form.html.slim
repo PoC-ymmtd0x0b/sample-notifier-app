@@ -19,5 +19,6 @@
     = f.fields_for :practices_books do |practices_book|
       .book-item
         = practices_book.collection_select :book_id, Book.all.collect { |book| [book.id, book.title] }, :first, :last, {}
+        = practices_book.check_box :_destroy
 
   .actions = f.submit
