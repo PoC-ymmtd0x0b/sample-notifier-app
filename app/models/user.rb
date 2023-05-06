@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true
+
+  has_many :reports
+  has_many :announcements
+  has_many :pages
+  has_many :notifications
 end

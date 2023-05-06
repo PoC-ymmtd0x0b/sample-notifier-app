@@ -1,0 +1,9 @@
+.background
+  .container
+    h3 #{@report.user.name}さんのはじめての日報です！
+    p #{@report.user.name}さんのはじめての日報です。歓迎のコメントを投稿しよう！！
+    hr
+    = simple_format @report.description
+    hr
+    footer
+      = link_to 'この日報へ', report_url(@report)
