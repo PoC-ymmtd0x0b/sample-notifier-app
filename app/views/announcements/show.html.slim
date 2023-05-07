@@ -1,0 +1,21 @@
+p
+  strong #{ Announcement.human_attribute_name('title') }
+p.content
+  = @announcement.title
+
+p
+  strong #{ Announcement.human_attribute_name('description') }
+  = simple_format @announcement.description, class: 'content'
+
+p
+  strong #{ Announcement.human_attribute_name('user') }
+p.content
+  = @announcement.user.name
+
+- if @announcement.user == current_user
+  => link_to '編集', edit_announcement_path(@announcement)
+  '|
+  =<> link_to '削除', @announcement, data: {confirm: '本当に実行してよろしいでしょうか？'},  method: :delete
+  '|
+
+=< link_to '戻る', announcements_path
