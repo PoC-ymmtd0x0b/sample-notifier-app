@@ -1,0 +1,5 @@
+.nested-fields
+  .fields
+    .book-item
+      = f.collection_select :book_id, Book.all.collect { |book| [book.id, book.title] }, :first, :last, { prompt: '選択して下さい' }
+      = link_to_remove_association '×', f, class: 'remove-book'

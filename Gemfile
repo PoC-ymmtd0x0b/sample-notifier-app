@@ -32,6 +32,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # not default
 gem 'active_delivery'
 gem 'abstract_notifier'
+gem 'cocoon'
 gem 'devise'
 gem 'devise-i18n'
 gem 'i18n_generators'

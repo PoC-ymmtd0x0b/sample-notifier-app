@@ -10,11 +10,9 @@ class PracticesController < ApplicationController
 
   def new
     @practice = Practice.new
-    @practice.practices_books.new
   end
 
   def edit
-    @practice.practices_books.new
   end
 
   def create

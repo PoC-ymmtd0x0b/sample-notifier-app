@@ -14,11 +14,10 @@
     = f.label :description
     = f.text_area :description
 
-  .field
-    = f.label '参考書'
+  #practices_books
     = f.fields_for :practices_books do |practices_book|
-      .book-item
-        = practices_book.collection_select :book_id, Book.all.collect { |book| [book.id, book.title] }, :first, :last, { prompt: '選択して下さい' }
-        = practices_book.check_box :_destroy
+      = render 'practices_book_fields', f: practices_book
+    .add-book
+      = link_to_add_association '＋参考書の追加', f, :practices_books
 
   .actions = f.submit
