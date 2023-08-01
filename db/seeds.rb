@@ -31,3 +31,27 @@ users.each do |user|
     password: user[:password]
   )
 end
+
+
+practices = [
+  {
+    title: 'HTMLの書き方を学ぶ',
+    description: 'HTMLの書き方を学びます'
+  },
+  {
+    title: 'CSS入門',
+    description: 'CSSでHTMLを装飾しよう'
+  },
+  {
+    title: 'Ruby初級',
+    description: 'プログラミング言語『Ruby』の基本を学びます'
+  }
+]
+
+practices.each_with_index do |practice, index|
+  Practice.create!(
+    title: practice[:title],
+    description: practice[:description],
+    position: index + 1
+  )
+end

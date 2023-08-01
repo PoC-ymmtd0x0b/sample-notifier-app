@@ -2,7 +2,7 @@ class PracticesController < ApplicationController
   before_action :set_practice, only: %i[ show edit update destroy ]
 
   def index
-    @practices = Practice.all
+    @practices = Practice.all.order(:position)
   end
 
   def show
