@@ -5,12 +5,14 @@ table
     tr
       th = Practice.human_attribute_name('title')
       th = Practice.human_attribute_name('description')
+      th = '順序'
 
-  tbody
+  tbody#js-sortable
     - @practices.each do |practice|
-      tr
+      tr.is-grab.js-grab(data-practice_id="#{practice.id}")
         td = practice.title
         td = link_to "詳細", practice
+        td = '≡'
 
 br
 
