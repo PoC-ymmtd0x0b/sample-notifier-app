@@ -30,12 +30,17 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # not default
+gem 'active_delivery'
+gem 'abstract_notifier'
+gem 'cocoon'
 gem 'devise'
 gem 'devise-i18n'
 gem 'i18n_generators'
+gem 'newspaper'
 gem 'tilt', '2.0.11'
 gem 'slim', '4.1.0'
 gem 'slim-rails', '3.6.1'
+gem 'acts_as_list'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

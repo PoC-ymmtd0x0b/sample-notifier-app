@@ -1,0 +1,19 @@
+h1 参考書一覧
+
+table
+  thead
+    tr
+      th = Book.human_attribute_name('title')
+      th = Book.human_attribute_name('price')
+      th
+
+  tbody
+    - @books.each do |book|
+      tr
+        td = book.title
+        td = book.price
+        td = link_to '詳細', book
+
+br
+
+= link_to '新しい参考書', new_book_path

@@ -1,0 +1,57 @@
+.book-item {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.book-cover {
+  img {
+    width: 70px;
+    border: solid 1px rgba(100, 100, 100, 0.4);
+  }
+}
+
+.book-info {
+  margin-left: 5px;
+  font-size: 0.9em;
+}
+
+.add-book {
+  margin: 10px 0;
+}
+
+.remove-book {
+  margin-left: 5px;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+.remove-book:hover {
+  background-color: inherit;
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  min-width: 500px;
+  padding: 0;
+}
+
+thead {
+  background-color: rgba(150, 150, 150, 0.5);
+  border: solid 1px black;
+}
+
+.js-grab {
+  border: solid 1px black;
+}
+
+td,th {
+  padding: 0 0;
+  font-size: 1.4em;
+  height: 2.8em;
+}
+
+.is-grab {
+  cursor: grab;
+}
