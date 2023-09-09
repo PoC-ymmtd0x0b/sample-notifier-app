@@ -1,0 +1,19 @@
+h1 お知らせ一覧
+
+table
+  thead
+    tr
+      th = Announcement.human_attribute_name('title')
+      th = Announcement.human_attribute_name('user')
+      th
+
+  tbody
+    - @announcements.each do |announcement|
+      tr
+        td = announcement.title
+        td = announcement.user.name
+        td = link_to "詳細", announcement
+
+br
+
+= link_to '新しいお知らせの作成', new_announcement_path

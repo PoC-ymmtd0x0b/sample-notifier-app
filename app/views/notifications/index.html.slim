@@ -1,0 +1,15 @@
+h1 通知一覧
+
+table
+  thead
+    tr
+      th = Notification.human_attribute_name('message')
+      th = Notification.human_attribute_name('sender')
+      th
+
+  tbody
+    - @notifications.each do |notification|
+      tr
+        td = notification.message
+        td = notification.sender.name
+        td = link_to "詳細", notification
