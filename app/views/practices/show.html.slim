@@ -1,0 +1,27 @@
+p
+  strong #{ Practice.human_attribute_name('title') }
+p.content
+  = @practice.title
+
+p
+  strong #{ Practice.human_attribute_name('description') }
+  = simple_format @practice.description, class: 'content'
+
+- if @practice.books.any?
+  p
+    strong #{ Book.model_name.human }
+    - @practice.books.each do |book|
+      .book-item
+        .book-cover
+          = image_tag book.cover
+        .book-info
+          .book-title
+            = book.title
+          .book-price
+            = number_to_currency book.price, unit: '￥', format: '%u%n'
+
+=> link_to '編集', edit_practice_path(@practice)
+'|
+=>< link_to '削除', @practice, data: {confirm: '本当に実行してよろしいでしょうか？'}, method: :delete
+'|
+=< link_to '戻る', practices_path

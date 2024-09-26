@@ -1,0 +1,23 @@
+= form_for @practice do |f|
+  - if @practice.errors.any?
+    #error_explanation
+      h2 = t 'errors.template.header', model: Practice.model_name.human, count: @practice.errors.count
+      ul
+        - @practice.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+
+  .field
+    = f.label :description
+    = f.text_area :description
+
+  .field
+    = f.label '参考書'
+    = f.fields_for :practices_books do |practices_book|
+      .book-item
+        = practices_book.collection_select :book_id, Book.all.collect { |book| [book.id, book.title] }, :first, :last, {}
+
+  .actions = f.submit

@@ -1,0 +1,17 @@
+h1 プラクティス一覧
+
+table
+  thead
+    tr
+      th = Practice.human_attribute_name('title')
+      th = Practice.human_attribute_name('description')
+
+  tbody
+    - @practices.each do |practice|
+      tr
+        td = practice.title
+        td = link_to "詳細", practice
+
+br
+
+= link_to "新しいプラクティスを作る", new_practice_path

@@ -2,6 +2,12 @@ ja:
   activerecord:
     models:
       user: ユーザー  #g
+      report: 日報  #g
+      announcement: お知らせ  #g
+      page: ページ  #g
+      notification: 通知  #g
+      practice: プラクティス  #g
+      book: 参考書  #g
 
     attributes:
       user:
@@ -11,3 +17,32 @@ ja:
         remember_created_at: ログイン記憶時刻  #g
         reset_password_sent_at: パスワードリセット送信時刻  #g
         reset_password_token: パスワードリセット用トークン  #g
+
+      report:
+        description: 説明  #g
+        title: タイトル  #g
+        user: 作成者  #g
+
+      announcement:
+        description: 説明  #g
+        title: タイトル  #g
+        user: 作成者  #g
+
+      page:
+        body: 本文  #g
+        title: タイトル  #g
+        user: 作成者  #g
+
+      notification:
+        link: リンク  #g
+        message: メッセージ  #g
+        sender: 発信者  #g
+
+      practice:
+        description: 説明  #g
+        title: タイトル  #g
+
+      book:
+        title: タイトル  #g
+        price: 価格  #g
+        cover: 表紙  #g
